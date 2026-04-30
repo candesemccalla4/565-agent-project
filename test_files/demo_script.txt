@@ -1,0 +1,4 @@
+1. Run python main.py
+2. Encrypt a file
+3. Decrypt file
+4. Show output works
