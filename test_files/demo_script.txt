@@ -1,4 +1,20 @@
-1. Run python main.py
-2. Encrypt a file
-3. Decrypt file
-4. Show output works
+Secure File Transfer Demo Steps
+
+1. Run the program:
+   python main.py
+
+2. The system generates RSA public/private keys.
+
+3. A file (small.txt) is encrypted using AES.
+
+4. The AES key is encrypted using RSA.
+
+5. The encrypted file and key simulate secure transfer.
+
+6. The AES key is decrypted using the RSA private key.
+
+7. The file is decrypted and restored.
+
+Expected Output:
+- Encrypted file is created
+- Decrypted file matches original input
