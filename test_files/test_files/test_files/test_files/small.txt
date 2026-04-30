@@ -1,0 +1,1 @@
+This is a small test file used for basic encryption testing.
