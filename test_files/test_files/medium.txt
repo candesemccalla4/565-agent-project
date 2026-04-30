@@ -1,1 +1,0 @@
-This is a medium test file for encryption performance testing.
