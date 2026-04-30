@@ -1,26 +1,34 @@
-# Secure File Transfer Using Hybrid Cryptography (AES + RSA)
+# 🔐 Secure File Transfer Using Hybrid Cryptography (AES + RSA)
 
-## Overview
+## 📌 Overview
 
-This project implements a secure file transfer system using hybrid cryptography by combining AES (Advanced Encryption Standard) and RSA (Rivest–Shamir–Adleman).
+This project implements a secure file transfer system using hybrid cryptography, combining AES (Advanced Encryption Standard) and RSA (Rivest–Shamir–Adleman).
 
-## Features
+The system securely transfers large files while maintaining confidentiality, integrity, and efficiency.
 
-* Secure large file encryption
-* Efficient performance using AES
-* Secure key exchange using RSA
-* Modular Python implementation
+---
 
-## How It Works
+## 🎯 Objectives
 
-1. Generate RSA keys
+* Secure large file transfers
+* Ensure strong encryption and key protection
+* Improve performance compared to RSA-only systems
+
+---
+
+## ⚙️ How It Works
+
+1. Generate RSA key pair
 2. Generate AES key
 3. Encrypt file using AES
 4. Encrypt AES key using RSA
-5. Decrypt AES key
-6. Decrypt file
+5. Transfer encrypted file and key
+6. Decrypt AES key
+7. Decrypt file
 
-## Project Structure
+---
+
+## 📁 Project Structure
 
 * main.py
 * encrypt.py
@@ -31,14 +39,18 @@ This project implements a secure file transfer system using hybrid cryptography 
 * test_performance.py
 * test_files/
 
-## How to Run
+---
 
-Install dependencies:
+## 🚀 How to Run
+
+Install:
 pip install pycryptodome
 
-Run program:
+Run:
 python main.py
 
-## Author
+---
+
+## 👤 Author
 
 Candese McCalla
