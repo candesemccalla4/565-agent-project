@@ -82,3 +82,4 @@ The hybrid cryptographic system demonstrates:
 ## 👤 Author
 
 Candese McCalla
+Darrell Coulibaly
