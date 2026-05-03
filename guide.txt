@@ -1,0 +1,51 @@
+## Prerequisites
+Before running the code, ensure you have Python installed and the required cryptography library.
+Run the following command in your terminal to install PyCryptodome:
+    pip install pycryptodome
+
+## Project Structure
+- main.py : The interactive menu and main entry point for the tool.
+- core/ : Contains the cryptographic engine (keygen.py, encrypt.py, decrypt.py).
+- tools/ : Contains helper scripts (create_demo_file.py, test_performance.py).
+- key/ : Automatically generated folder where your RSA keys (public.pem, private.pem) are stored safely.
+- test_file/ : Automatically generated folder for your test data and encrypted packages.
+
+## Step-by-Step Usage
+
+### 1. Generate a Test File
+To avoid using real sensitive data, start by generating a secure 5MB demo file.
+Command: python tools/create_demo_file.py
+Result: This creates a file named `presentation_demo.txt` inside the `test_file/` folder.
+
+### 2. Run the Main Application
+Start the interactive menu by running:
+Command: python main.py
+
+### 3. Generate RSA Keys (The Receiver)
+Select Option 1 from the menu.
+This acts as the Receiver setting up their digital mailbox. It generates a 2048-bit RSA key pair and saves `public.pem` and `private.pem` into the `key/` folder.
+
+### 4. Encrypt the File (The Sender)
+Select Option 2 from the menu.
+When prompted for the filename, type: presentation_demo.txt
+The script will:
+  - Generate a random 32-byte AES key.
+  - Encrypt your 5MB text file instantly using AES.
+  - Lock the AES key using the Receiver's `public.pem` key.
+  - Save the secure package as `presentation_demo.txt.encrypted` in the `test_file/` folder.
+
+### 5. Decrypt the File (The Receiver)
+Select Option 3 from the menu.
+When prompted for the encrypted filename, type: presentation_demo.txt.encrypted
+When prompted for the original filename, type: presentation_demo.txt
+The script will:
+  - Use the Receiver's `private.pem` key to unlock the AES key.
+  - Use the unlocked AES key to decrypt the data.
+  - Save the restored file as `recovered_presentation_demo.txt` in the `test_file/` folder.
+
+## Performance Testing
+To reproduce the methodology performance metrics from our report (testing 1MB, 50MB, and 200MB dummy files), ensure you have generated RSA keys first, then run:
+Command: python tools/test_performance.py
+
+## Security Note
+This repository includes a `.gitignore` file that deliberately ignores the `key/` and `test_file/` directories. Never upload your `private.pem` or massive data files to a public GitHub repository!
